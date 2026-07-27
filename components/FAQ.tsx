@@ -5,15 +5,19 @@ import { useState } from "react";
 const faqs = [
   {
     q: "How do I get the files after I buy?",
-    a: "Checkout is instant. Right after payment we send a one-time login link to your inbox — click it and your dashboard is waiting with a download button.",
+    a: "Checkout is instant. Right after payment we send a one-time login link to your inbox — click it and your dashboard is waiting with a download button for your template.",
   },
   {
-    q: "Do I need to create a password?",
-    a: "No. We use passwordless magic-link sign-in, so there's nothing to remember or reset.",
+    q: "Do I need to know how to code?",
+    a: "No coding is required to use the templates — they're ready-made HTML/CSS/JS files you can open and customize with any text editor, or hand off to a developer for tweaks.",
   },
   {
-    q: "Can I use these templates commercially?",
-    a: "Yes — every purchase includes a commercial use license for your own projects and client work.",
+    q: "Can I use these templates for client projects?",
+    a: "Yes — every purchase includes a commercial use license, so you can use it for your own site or build it for a client.",
+  },
+  {
+    q: "What's included in the download?",
+    a: "Each template comes as a complete, ready-to-deploy package: all HTML, CSS, and JavaScript files, fully responsive and tested across devices.",
   },
   {
     q: "What if I lose access to my download?",

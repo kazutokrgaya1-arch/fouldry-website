@@ -11,12 +11,13 @@ export default function Hero() {
           01 / SPECIFICATION
         </p>
         <h1 className="font-display text-5xl md:text-6xl leading-[1.05] text-paper max-w-3xl">
-          Business templates, drafted like blueprints —
+          Premium website templates, drafted like blueprints —
           <span className="text-blueprint"> built to launch, not to tinker with.</span>
         </h1>
         <p className="mt-6 text-slate text-lg max-w-xl">
-          Notion systems, Figma kits, and pitch decks engineered for founders
-          who&rsquo;d rather ship this weekend than design from scratch.
+          Fully coded HTML/CSS/JS templates for coffee shops, portfolios,
+          SaaS products, restaurants, and gyms. Drop them in and ship this
+          weekend — no design work, no guesswork.
         </p>
 
         <div className="mt-10 flex items-center gap-4">
@@ -24,7 +25,7 @@ export default function Hero() {
             href="#pricing"
             className="rounded-md bg-brass text-ink font-semibold px-6 py-3 hover:bg-brass/90 transition"
           >
-            Get the templates
+            Browse templates
           </a>
           <a
             href="#faq"
@@ -38,7 +39,7 @@ export default function Hero() {
         <div className="mt-16 flex items-center gap-3 font-mono text-xs text-slate max-w-md">
           <span>⊢</span>
           <div className="flex-1 border-t border-slate/40" />
-          <span className="text-blueprint">48 HRS avg. time-to-launch</span>
+          <span className="text-blueprint">5 templates, 100% HTML/CSS/JS</span>
           <div className="flex-1 border-t border-slate/40" />
           <span>⊣</span>
         </div>
