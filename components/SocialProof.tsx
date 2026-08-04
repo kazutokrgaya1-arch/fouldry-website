@@ -6,23 +6,18 @@ const stats = [
 
 export default function SocialProof() {
   return (
-    <section className="border-b border-line bg-ink-2/40">
-      <div className="max-w-6xl mx-auto px-6 py-12">
-        <p className="font-mono text-xs tracking-[0.2em] text-blueprint mb-8">
-          02 / FIELD NOTES
-        </p>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+    <section className="bg-market-surface border-b border-market-border">
+      <div className="max-w-7xl mx-auto px-4 py-8">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {stats.map((stat) => (
-            <div key={stat.label} className="border-l border-line pl-5">
-              <p className="font-display text-3xl text-paper">{stat.value}</p>
-              <p className="text-slate text-sm mt-1">{stat.label}</p>
+            <div key={stat.label} className="border-l-2 border-market-accent pl-4">
+              <p className="text-market-text font-bold text-2xl">
+                {stat.value}
+              </p>
+              <p className="text-market-muted text-sm mt-1">{stat.label}</p>
             </div>
           ))}
         </div>
-        <p className="text-slate text-sm mt-8 italic">
-          Replace this strip with real reviews, logos, or a Wall-of-Love
-          embed once you have your first customers.
-        </p>
       </div>
     </section>
   );

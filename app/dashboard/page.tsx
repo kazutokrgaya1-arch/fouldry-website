@@ -21,39 +21,38 @@ export default async function DashboardPage() {
     .order("created_at", { ascending: false });
 
   return (
-    <main className="min-h-screen bg-ink bg-blueprint bg-grid px-6 py-16">
+    <main className="min-h-screen bg-market-surface px-4 py-12">
       <div className="max-w-3xl mx-auto">
-        <p className="font-mono text-xs tracking-[0.2em] text-blueprint mb-2">
-          04 / DASHBOARD
-        </p>
-        <h1 className="font-display text-3xl text-paper mb-1">
-          Welcome back
+        <h1 className="font-bold text-2xl text-market-text mb-1">
+          My purchases
         </h1>
-        <p className="text-slate mb-10">{user.email}</p>
+        <p className="text-market-muted mb-8">{user.email}</p>
 
         {!purchases || purchases.length === 0 ? (
-          <div className="border border-line rounded-lg p-8 text-center">
-            <p className="text-paper mb-2">Nothing here yet.</p>
-            <p className="text-slate text-sm">
+          <div className="bg-white border border-market-border rounded-lg p-8 text-center">
+            <p className="text-market-text mb-2 font-medium">
+              Nothing here yet.
+            </p>
+            <p className="text-market-muted text-sm">
               Once you buy a template, it will show up here instantly,
               ready to download.
             </p>
           </div>
         ) : (
-          <div className="space-y-4">
+          <div className="space-y-3">
             {purchases.map((purchase: any) => (
               <div
                 key={purchase.id}
-                className="flex items-center justify-between border border-line rounded-lg p-6 bg-ink-2/40"
+                className="flex items-center justify-between bg-white border border-market-border rounded-lg p-5"
               >
                 <div>
-                  <h2 className="font-display text-lg text-paper">
+                  <h2 className="font-semibold text-market-text">
                     {purchase.products?.name}
                   </h2>
-                  <p className="text-slate text-sm mt-1">
+                  <p className="text-market-muted text-sm mt-1">
                     {purchase.products?.description}
                   </p>
-                  <p className="font-mono text-xs text-slate mt-2">
+                  <p className="text-xs text-market-muted mt-2">
                     Purchased{" "}
                     {new Date(purchase.created_at).toLocaleDateString()}
                   </p>

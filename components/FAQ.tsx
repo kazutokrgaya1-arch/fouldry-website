@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     q: "What's included in the download?",
-    a: "Each template comes as a complete, ready-to-deploy package: all HTML, CSS, and JavaScript files, fully responsive and tested across devices.",
+    a: "Each template comes as a complete, ready-to-deploy zip package: all HTML, CSS, and JavaScript files, fully responsive and tested across devices.",
   },
   {
     q: "What if I lose access to my download?",
@@ -29,29 +29,30 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="border-b border-line">
-      <div className="max-w-3xl mx-auto px-6 py-24">
-        <p className="font-mono text-xs tracking-[0.2em] text-blueprint mb-3">
-          04 / NOTES
-        </p>
-        <h2 className="font-display text-3xl text-paper mb-10">
-          Questions, answered.
+    <section id="faq" className="bg-market-surface border-t border-market-border">
+      <div className="max-w-3xl mx-auto px-4 py-14">
+        <h2 className="text-market-text font-bold text-xl mb-6">
+          Frequently asked questions
         </h2>
 
-        <div className="divide-y divide-line border-t border-b border-line">
+        <div className="divide-y divide-market-border border-t border-b border-market-border bg-white rounded-md">
           {faqs.map((item, i) => (
-            <div key={item.q}>
+            <div key={item.q} className="px-4">
               <button
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                className="w-full flex items-center justify-between py-5 text-left"
+                className="w-full flex items-center justify-between py-4 text-left"
               >
-                <span className="text-paper font-medium">{item.q}</span>
-                <span className="font-mono text-blueprint">
+                <span className="text-market-text text-sm font-medium">
+                  {item.q}
+                </span>
+                <span className="text-market-accent font-bold">
                   {openIndex === i ? "−" : "+"}
                 </span>
               </button>
               {openIndex === i && (
-                <p className="text-slate text-sm pb-5 pr-8">{item.a}</p>
+                <p className="text-market-muted text-sm pb-4 pr-8">
+                  {item.a}
+                </p>
               )}
             </div>
           ))}

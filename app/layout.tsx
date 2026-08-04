@@ -1,19 +1,14 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const display = Space_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-display",
-  weight: ["500", "700"],
-});
 const body = Inter({ subsets: ["latin"], variable: "--font-body" });
 const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
 
 export const metadata: Metadata = {
-  title: "Foundry — Business templates, drafted for launch",
+  title: "Foundry — Website Templates",
   description:
-    "Blueprint-grade Notion, Figma, and pitch-deck templates for founders who ship fast.",
+    "Fully coded HTML/CSS/JS website templates for coffee shops, portfolios, SaaS products, restaurants, and gyms.",
 };
 
 export default function RootLayout({
@@ -22,8 +17,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable} ${mono.variable}`}>
-      <body className="font-body bg-ink text-paper antialiased">
+    <html lang="en" className={`${body.variable} ${mono.variable}`}>
+      <body className="font-body bg-market-bg text-market-text antialiased">
         {children}
       </body>
     </html>

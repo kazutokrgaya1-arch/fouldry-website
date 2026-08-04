@@ -27,7 +27,7 @@ export default function NewsletterForm() {
 
   if (status === "done") {
     return (
-      <p className="text-sm text-blueprint font-mono">
+      <p className="text-sm text-market-accent font-medium">
         You&rsquo;re on the list. Watch your inbox.
       </p>
     );
@@ -41,12 +41,12 @@ export default function NewsletterForm() {
         placeholder="you@company.com"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        className="flex-1 rounded-md bg-ink border border-line px-4 py-2.5 text-sm text-paper placeholder:text-slate focus:outline-none focus:ring-2 focus:ring-blueprint"
+        className="flex-1 rounded-md bg-white border border-market-border px-4 py-2.5 text-sm text-market-text placeholder:text-market-muted focus:outline-none focus:ring-2 focus:ring-market-accent"
       />
       <button
         type="submit"
         disabled={status === "loading"}
-        className="rounded-md bg-brass text-ink text-sm font-semibold px-4 py-2.5 hover:bg-brass/90 transition disabled:opacity-60 whitespace-nowrap"
+        className="rounded-md bg-market-accent hover:bg-market-accent-dark text-white text-sm font-semibold px-4 py-2.5 transition disabled:opacity-60 whitespace-nowrap"
       >
         {status === "loading" ? "Joining…" : "Get updates"}
       </button>

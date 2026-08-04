@@ -33,7 +33,7 @@ export default function DownloadButton({ filePath }: { filePath?: string }) {
     <button
       onClick={handleDownload}
       disabled={loading}
-      className="shrink-0 rounded-md bg-brass text-ink font-semibold text-sm px-5 py-2.5 hover:bg-brass/90 transition disabled:opacity-60"
+      className="shrink-0 rounded-md bg-market-accent hover:bg-market-accent-dark text-white font-semibold text-sm px-5 py-2.5 transition disabled:opacity-60"
     >
       {loading ? "Preparing…" : "Download"}
     </button>
