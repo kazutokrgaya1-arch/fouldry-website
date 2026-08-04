@@ -3,12 +3,22 @@
 @tailwind utilities;
 
 ::selection {
-  background: rgba(79, 209, 232, 0.3);
+  background: rgba(240, 99, 29, 0.25);
 }
 
 :focus-visible {
-  outline: 2px solid #4fd1e8;
+  outline: 2px solid #f0631d;
   outline-offset: 2px;
+}
+
+/* Hides the scrollbar on horizontally-scrolling rows (category chips)
+   while keeping them scrollable via touch/drag. */
+.scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
 }
 
 @media (prefers-reduced-motion: reduce) {

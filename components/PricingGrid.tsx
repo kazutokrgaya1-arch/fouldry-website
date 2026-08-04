@@ -91,6 +91,9 @@ export default function PricingGrid() {
       } else {
         alert("Couldn't start checkout. Please try again.");
       }
+    } catch (err) {
+      console.error("Checkout request failed:", err);
+      alert("Couldn't start checkout. Please check your connection and try again.");
     } finally {
       setLoadingSlug(null);
     }
@@ -98,21 +101,20 @@ export default function PricingGrid() {
 
   return (
     <section id="pricing" className="bg-market-bg">
-      <div className="max-w-7xl mx-auto px-4 py-12">
-        <h2 className="text-market-text font-bold text-2xl mb-1">
+      <div className="max-w-7xl mx-auto px-4 py-8 sm:py-12">
+        <h2 className="text-market-text font-bold text-xl sm:text-2xl mb-1">
           All templates
         </h2>
-        <p className="text-market-muted text-sm mb-6">
+        <p className="text-market-muted text-sm mb-4 sm:mb-6">
           5 ready-to-launch designs, ₱499 each
         </p>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-5">
           {plans.map((plan) => (
             <div
               key={plan.slug}
               className="bg-white border border-market-border rounded-xl overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all flex flex-col"
             >
-              {/* real product screenshot */}
               <div className="relative aspect-square bg-market-surface">
                 <Image
                   src={plan.image}
@@ -123,11 +125,11 @@ export default function PricingGrid() {
                 />
               </div>
 
-              <div className="p-4 flex flex-col flex-1">
-                <p className="text-sm text-market-text font-semibold leading-snug line-clamp-2 min-h-[2.5rem]">
+              <div className="p-3 sm:p-4 flex flex-col flex-1">
+                <p className="text-xs sm:text-sm text-market-text font-semibold leading-snug line-clamp-2 min-h-[2.2rem] sm:min-h-[2.5rem]">
                   {plan.name}
                 </p>
-                <p className="text-xs text-market-muted mt-1 line-clamp-2 min-h-[2rem]">
+                <p className="hidden sm:block text-xs text-market-muted mt-1 line-clamp-2 min-h-[2rem]">
                   {plan.description}
                 </p>
 
@@ -138,17 +140,19 @@ export default function PricingGrid() {
                   </span>
                 </div>
 
-                <p className="text-market-accent font-bold text-xl mt-3">
+                <p className="text-market-accent font-bold text-lg sm:text-xl mt-2 sm:mt-3">
                   ₱{plan.price.toFixed(2)}
                 </p>
-                <p className="text-xs text-market-muted -mt-0.5 mb-3">
+                <p className="text-xs text-market-muted -mt-0.5 mb-2 sm:mb-3">
                   {plan.sold} sold
                 </p>
 
+                {/* min-h-[44px] keeps the tap target comfortably sized
+                    for mobile per standard touch-target guidance. */}
                 <button
                   onClick={() => handleBuy(plan.variantId, plan.slug)}
                   disabled={loadingSlug === plan.slug}
-                  className="mt-auto w-full bg-market-accent hover:bg-market-accent-dark text-white text-sm font-semibold py-2.5 rounded-md transition disabled:opacity-60"
+                  className="mt-auto w-full min-h-[44px] bg-market-accent hover:bg-market-accent-dark text-white text-sm font-semibold rounded-md transition disabled:opacity-60 active:scale-[0.98]"
                 >
                   {loadingSlug === plan.slug ? "Redirecting…" : "Buy now"}
                 </button>

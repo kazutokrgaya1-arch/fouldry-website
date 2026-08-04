@@ -1,12 +1,12 @@
 export default function Hero() {
   return (
     <section className="bg-market-bg border-b border-market-border">
-      <div className="max-w-7xl mx-auto px-4 py-10 md:py-14 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div className="max-w-7xl mx-auto px-4 py-8 sm:py-10 md:py-14 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 md:gap-6">
         <div>
-          <p className="text-market-accent text-sm font-semibold mb-2">
+          <p className="text-market-accent text-xs sm:text-sm font-semibold mb-2">
             Website Templates Sale
           </p>
-          <h1 className="text-market-text font-bold text-3xl md:text-4xl leading-tight">
+          <h1 className="text-market-text font-bold text-2xl sm:text-3xl md:text-4xl leading-tight">
             Every template,{" "}
             <span className="text-market-accent">₱499</span> — build your
             site this weekend
@@ -18,7 +18,7 @@ export default function Hero() {
         </div>
         <a
           href="#pricing"
-          className="shrink-0 bg-market-accent hover:bg-market-accent-dark text-white font-bold px-8 py-3 rounded-md transition"
+          className="shrink-0 w-full md:w-auto text-center bg-market-accent hover:bg-market-accent-dark text-white font-bold px-8 py-3 rounded-md transition"
         >
           Shop templates
         </a>
